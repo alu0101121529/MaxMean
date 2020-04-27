@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classAlgorithm.html" title="virtual algorithm class used to solve the maxmean problem " alt="" coords="5,107,92,133"/>
+<area shape="rect" id="node2" href="$classGrasp.html" title="Grasp implementation to solve Max Mean. " alt="" coords="199,5,259,32"/>
+<area shape="rect" id="node3" href="$classgreedyAlgorithm.html" title="Implementation of the greedy algorithm to solve Max Mean problem. " alt="" coords="164,56,295,83"/>
+<area shape="rect" id="node4" href="$classMultiStart.html" title="MultiStart implementation to solve Max Mean. " alt="" coords="187,107,272,133"/>
+<area shape="rect" id="node5" href="$classsecondGreedyAlgorithm.html" title="Another implementation of the greedy algorithm to solve Max Mean problem. " alt="" coords="140,157,319,184"/>
+<area shape="rect" id="node6" href="$classVns.html" title="Vns implementation to solve Max Mean. " alt="" coords="206,208,253,235"/>
+</map>

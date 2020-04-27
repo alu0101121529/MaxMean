@@ -1,0 +1,10 @@
+<map id="MultiStart::MultiStart" name="MultiStart::MultiStart">
+<area shape="rect" id="node2" href="$classMultiStart.html#a29c5796648ede3e6c7fe8ca8043f8187" title="Function to create a initial solution for the problem. " alt="" coords="403,5,576,47"/>
+<area shape="rect" id="node4" href="$classMultiStart.html#a456dc441b6e7028aa86a0488830f9bc1" title="Function to create a RCL array based on an initial solution. " alt="" coords="223,274,341,301"/>
+<area shape="rect" id="node6" href="$classMultiStart.html#af27ae5dbba5f924070f103b7bf5987a3" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="405,173,573,199"/>
+<area shape="rect" id="node7" href="$classMultiStart.html#a0ad5ed40a5c4ab964cb27f79343eed98" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="624,198,795,225"/>
+<area shape="rect" id="node8" href="$classMultiStart.html#a9d842b1f602c4b8a47bf6d88d483ccae" title="Method that executes the algorithm. " alt="" coords="209,122,355,149"/>
+<area shape="rect" id="node3" href="$classMatriz.html#a6b18342f8c083baece693ff41185a206" title="Get the rows object. " alt="" coords="645,42,774,69"/>
+<area shape="rect" id="node5" href="$classMatriz.html#a8df14a27d791f24206dd633b2a685c5b" title="Returns the mean dispersion. " alt="" coords="843,198,953,225"/>
+<area shape="rect" id="node9" href="$classMatriz.html#a394b84a5ec13fd2f4d202ab218680afe" title="Returns a vector with all the nodes. " alt="" coords="423,71,555,98"/>
+</map>

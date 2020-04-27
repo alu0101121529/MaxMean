@@ -1,0 +1,188 @@
+\hypertarget{classgreedyAlgorithm}{}\section{greedy\+Algorithm Class Reference}
+\label{classgreedyAlgorithm}\index{greedy\+Algorithm@{greedy\+Algorithm}}
+
+
+Implementation of the greedy algorithm to solve Max Mean problem.  
+
+
+
+
+{\ttfamily \#include $<$greedy\+Algorithm.\+hpp$>$}
+
+
+
+Inheritance diagram for greedy\+Algorithm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classgreedyAlgorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for greedy\+Algorithm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classgreedyAlgorithm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgreedyAlgorithm_acd4c3a073c8ed2e93bbf402363ebd71d}{greedy\+Algorithm} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Construct a new greedy \hyperlink{classAlgorithm}{Algorithm} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classgreedyAlgorithm_a37c81600b24a32ae25b6f0eeab643a7a}{execute} ()
+\begin{DoxyCompactList}\small\item\em Method that executes the algorithm. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, bool $>$ \hyperlink{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07}{maximize\+Md} (std\+::vector$<$ int $>$ solution)
+\begin{DoxyCompactList}\small\item\em Returns the node with the max mean dispersion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementation of the greedy algorithm to solve Max Mean problem. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgreedyAlgorithm_acd4c3a073c8ed2e93bbf402363ebd71d}\label{classgreedyAlgorithm_acd4c3a073c8ed2e93bbf402363ebd71d}} 
+\index{greedy\+Algorithm@{greedy\+Algorithm}!greedy\+Algorithm@{greedy\+Algorithm}}
+\index{greedy\+Algorithm@{greedy\+Algorithm}!greedy\+Algorithm@{greedy\+Algorithm}}
+\subsubsection{\texorpdfstring{greedy\+Algorithm()}{greedyAlgorithm()}}
+{\footnotesize\ttfamily greedy\+Algorithm\+::greedy\+Algorithm (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new greedy \hyperlink{classAlgorithm}{Algorithm} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+30 : \hyperlink{classAlgorithm_a89df1d2c6751f70733f38daa0ee2a13b}{Algorithm}(filename) \{\}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgreedyAlgorithm_acd4c3a073c8ed2e93bbf402363ebd71d_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgreedyAlgorithm_a37c81600b24a32ae25b6f0eeab643a7a}\label{classgreedyAlgorithm_a37c81600b24a32ae25b6f0eeab643a7a}} 
+\index{greedy\+Algorithm@{greedy\+Algorithm}!execute@{execute}}
+\index{execute@{execute}!greedy\+Algorithm@{greedy\+Algorithm}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ greedy\+Algorithm\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method that executes the algorithm. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAlgorithm_af6ea9eb9a6dbd41896e3fd7dabac096b}{Algorithm}.
+
+
+\begin{DoxyCode}
+4 \{
+5   std::vector<int> solution;
+6   std::pair<int, int> firstSolutionPair = graph.\hyperlink{classMatriz_a30e8aba7a2868aaa98f11d3037ff8319}{biggestAfinityPair}();
+7   solution.push\_back(firstSolutionPair.first);
+8   solution.push\_back(firstSolutionPair.second);
+9   std::pair<int, bool> k = \hyperlink{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07}{maximizeMd}(solution);
+10   \textcolor{keywordflow}{while} (k.second)
+11   \{
+12     solution.push\_back(k.first);
+13     k = \hyperlink{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07}{maximizeMd}(solution);
+14   \}
+15   \textcolor{keywordflow}{return} solution;
+16 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgreedyAlgorithm_a37c81600b24a32ae25b6f0eeab643a7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgreedyAlgorithm_a37c81600b24a32ae25b6f0eeab643a7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07}\label{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07}} 
+\index{greedy\+Algorithm@{greedy\+Algorithm}!maximize\+Md@{maximize\+Md}}
+\index{maximize\+Md@{maximize\+Md}!greedy\+Algorithm@{greedy\+Algorithm}}
+\subsubsection{\texorpdfstring{maximize\+Md()}{maximizeMd()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, bool $>$ greedy\+Algorithm\+::maximize\+Md (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Returns the node with the max mean dispersion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$int, bool$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+19 \{
+20   std::vector<std::pair<int, bool>> vertexVector;
+21   std::pair<int, bool> vertex(-1, \textcolor{keyword}{false});
+22   vertexVector.push\_back(vertex);
+23   \textcolor{keywordtype}{float} currentDistance = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+24   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < graph.\hyperlink{classMatriz_a6b18342f8c083baece693ff41185a206}{get\_rows}(); i++)
+25   \{
+26     \textcolor{keywordflow}{if} (!(std::find(solution.begin(), solution.end(), i) != solution.end()))
+27     \{
+28       solution.push\_back(i);
+29       \textcolor{keywordtype}{float} nextMd = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+30       solution.pop\_back();
+31       \textcolor{keywordflow}{if} (nextMd > currentDistance)
+32       \{
+33         currentDistance = nextMd;
+34         vertexVector.clear();
+35         vertexVector.push\_back(std::pair<int, bool>(i, \textcolor{keyword}{true}));
+36       \}
+37       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nextMd == currentDistance)
+38       \{
+39         vertexVector.push\_back(std::pair<int, bool>(i, \textcolor{keyword}{true}));
+40       \}
+41     \}
+42   \}
+43   \textcolor{keywordflow}{return} vertexVector[rand() % vertexVector.size()];
+44 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgreedyAlgorithm_a4968e1371d2fdfb1b1b6f24b57dd1f07_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{greedyAlgorithm_8hpp}{greedy\+Algorithm.\+hpp}\item 
+src/greedy\+Algorithm.\+cpp\end{DoxyCompactItemize}

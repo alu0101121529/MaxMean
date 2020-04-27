@@ -1,0 +1,5 @@
+<map id="Vns::constructionPhase" name="Vns::constructionPhase">
+<area shape="rect" id="node2" href="$classVns.html#a82c0b5f02b3b7c35483e9e0e508e34ae" title="Construct a new Vns object. " alt="" coords="635,28,713,54"/>
+<area shape="rect" id="node3" href="$classVns.html#a8eee9f0e31bb41bcd7bd00c46170e5b9" title="Creates a solutión with a specific neighborhood size. " alt="" coords="227,28,432,54"/>
+<area shape="rect" id="node4" href="$classVns.html#aece2ea2cb74dd3608570321fcbb2de0c" title="Method that executes the algorithm. " alt="" coords="480,78,587,105"/>
+</map>

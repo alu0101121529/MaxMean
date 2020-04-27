@@ -1,0 +1,511 @@
+\hypertarget{classMatriz}{}\section{Matriz Class Reference}
+\label{classMatriz}\index{Matriz@{Matriz}}
+
+
+Matrix containing all the distances between nodes.  
+
+
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMatriz_a388709cfee356a0c78b66e3f538e9318}{Matriz} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classMatriz}{Matriz} object. \end{DoxyCompactList}\item 
+void \hyperlink{classMatriz_aa929f933e9088dc0efecaa9a46d555d9}{resize\+Matrix} (int rows, int cols)
+\begin{DoxyCompactList}\small\item\em Change the matrix\textquotesingle{}s dimensions. \end{DoxyCompactList}\item 
+int \hyperlink{classMatriz_a6b18342f8c083baece693ff41185a206}{get\+\_\+rows} ()
+\begin{DoxyCompactList}\small\item\em Get the rows object. \end{DoxyCompactList}\item 
+int \hyperlink{classMatriz_ad6915f9b31f93230a3ce05d01d23a47b}{get\+\_\+cols} ()
+\begin{DoxyCompactList}\small\item\em Get the cols object. \end{DoxyCompactList}\item 
+void \hyperlink{classMatriz_a71fea2383ce785254c2f27da25ef70c8}{set\+\_\+position} (int row, int col, int value)
+\begin{DoxyCompactList}\small\item\em Set the position object. \end{DoxyCompactList}\item 
+int \hyperlink{classMatriz_a1894d8447d3ae6992a43e46f93422b88}{get\+\_\+position} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Get the position object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMatriz_ae0fd5f42c3797c8d4b85c1d6701e0e7e}\label{classMatriz_ae0fd5f42c3797c8d4b85c1d6701e0e7e}} 
+void \hyperlink{classMatriz_ae0fd5f42c3797c8d4b85c1d6701e0e7e}{write} ()
+\begin{DoxyCompactList}\small\item\em Print the matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \& \hyperlink{classMatriz_ad2adc857ff1738ebfb7fe42de408737b}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\begin{DoxyCompactList}\small\item\em Operator \mbox{[}\mbox{]} overload. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classMatriz_a30e8aba7a2868aaa98f11d3037ff8319}{biggest\+Afinity\+Pair} ()
+\begin{DoxyCompactList}\small\item\em returns a pair with the two nodes with the highest afinity \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \hyperlink{classMatriz_a2867d653d30b7fd8ca13e683bd7b8de6}{biggest\+Afinity} ()
+\begin{DoxyCompactList}\small\item\em returns a vector of pairs that contains the nodes that have highest afinity \end{DoxyCompactList}\item 
+float \hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{get\+Md} (std\+::vector$<$ int $>$ solution)
+\begin{DoxyCompactList}\small\item\em Returns the mean dispersion. \end{DoxyCompactList}\item 
+float \hyperlink{classMatriz_a61efbcc7ea661059ed0dfad32b5273cf}{get\+Md\+Pair} (std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ solution)
+\begin{DoxyCompactList}\small\item\em Returns the mean dispersion. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classMatriz_a394b84a5ec13fd2f4d202ab218680afe}{get\+Nodes} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector with all the nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Matrix containing all the distances between nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMatriz_a388709cfee356a0c78b66e3f538e9318}\label{classMatriz_a388709cfee356a0c78b66e3f538e9318}} 
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{Matriz()}{Matriz()}}
+{\footnotesize\ttfamily Matriz\+::\+Matriz (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classMatriz}{Matriz} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{std\+::string\}} & filename \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+36                              : matrix(0, std::vector<int>(0))
+37   \{
+38     std::ifstream myFile;
+39     myFile.open(filename);
+40     \textcolor{keywordtype}{int} numeroVertices = 0;
+41     \textcolor{keywordtype}{int} valores = 0;
+42     \textcolor{keywordflow}{if} (myFile.is\_open())
+43     \{
+44       myFile >> numeroVertices;
+45     \}
+46     this->\hyperlink{classMatriz_aa929f933e9088dc0efecaa9a46d555d9}{resizeMatrix}(numeroVertices, numeroVertices);
+47     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < numeroVertices; i++)
+48     \{
+49       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < numeroVertices; j++)
+50       \{
+51         matrix[i][j] = 0;
+52       \}
+53     \}
+54     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < numeroVertices; i++)
+55     \{
+56       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < numeroVertices; j++)
+57       \{
+58         \textcolor{keywordflow}{if} (!myFile.eof() && matrix[i][j] == 0 && i != j)
+59         \{
+60           myFile >> valores;
+61           matrix[i][j] = valores;
+62           matrix[j][i] = valores;
+63         \}
+64       \}
+65     \}
+66     myFile.close();
+67   \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatriz_a388709cfee356a0c78b66e3f538e9318_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMatriz_a2867d653d30b7fd8ca13e683bd7b8de6}\label{classMatriz_a2867d653d30b7fd8ca13e683bd7b8de6}} 
+\index{Matriz@{Matriz}!biggest\+Afinity@{biggest\+Afinity}}
+\index{biggest\+Afinity@{biggest\+Afinity}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{biggest\+Afinity()}{biggestAfinity()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ Matriz\+::biggest\+Afinity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns a vector of pairs that contains the nodes that have highest afinity 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::pair$<$int,int$>$$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+98 \{
+99   \textcolor{keywordtype}{float} biggestValue = 0;
+100   std::vector<std::pair<int, int>> vectorAfinity;
+101   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < matrix.size(); i++)
+102   \{
+103     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i + 1; j < matrix.size(); j++)
+104     \{
+105       \textcolor{keywordflow}{if} (matrix[i][j] >= biggestValue)
+106       \{
+107         biggestValue = matrix[i][j];
+108       \}
+109     \}
+110   \}
+111   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < matrix.size(); i++)
+112   \{
+113     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i + 1; j < matrix.size(); j++)
+114     \{
+115       \textcolor{keywordflow}{if} (matrix[i][j] == biggestValue)
+116       \{
+117         vectorAfinity.push\_back(std::pair<int, int>(i, j));
+118       \}
+119     \}
+120   \}
+121   \textcolor{keywordflow}{return} vectorAfinity;
+122 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classMatriz_a2867d653d30b7fd8ca13e683bd7b8de6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a30e8aba7a2868aaa98f11d3037ff8319}\label{classMatriz_a30e8aba7a2868aaa98f11d3037ff8319}} 
+\index{Matriz@{Matriz}!biggest\+Afinity\+Pair@{biggest\+Afinity\+Pair}}
+\index{biggest\+Afinity\+Pair@{biggest\+Afinity\+Pair}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{biggest\+Afinity\+Pair()}{biggestAfinityPair()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ Matriz\+::biggest\+Afinity\+Pair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns a pair with the two nodes with the highest afinity 
+
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$int,int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+58 \{
+59   \textcolor{keywordtype}{float} biggestValue = 0;
+60   std::vector<std::pair<int, int>> vectorAfinity;
+61   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < matrix.size(); i++)
+62   \{
+63     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i + 1; j < matrix.size(); j++)
+64     \{
+65       \textcolor{keywordflow}{if} (matrix[i][j] >= biggestValue)
+66       \{
+67         biggestValue = matrix[i][j];
+68       \}
+69     \}
+70   \}
+71   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < matrix.size(); i++)
+72   \{
+73     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i + 1; j < matrix.size(); j++)
+74     \{
+75       \textcolor{keywordflow}{if} (matrix[i][j] == biggestValue)
+76       \{
+77         vectorAfinity.push\_back(std::pair<int, int>(i, j));
+78       \}
+79     \}
+80   \}
+81   \textcolor{keywordflow}{return} vectorAfinity[rand() % vectorAfinity.size()];
+82 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatriz_a30e8aba7a2868aaa98f11d3037ff8319_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_ad6915f9b31f93230a3ce05d01d23a47b}\label{classMatriz_ad6915f9b31f93230a3ce05d01d23a47b}} 
+\index{Matriz@{Matriz}!get\+\_\+cols@{get\+\_\+cols}}
+\index{get\+\_\+cols@{get\+\_\+cols}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{get\+\_\+cols()}{get\_cols()}}
+{\footnotesize\ttfamily int Matriz\+::get\+\_\+cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the cols object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+18 \{
+19   \textcolor{keywordflow}{return} matrix[0].size();
+20 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classMatriz_ad6915f9b31f93230a3ce05d01d23a47b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a1894d8447d3ae6992a43e46f93422b88}\label{classMatriz_a1894d8447d3ae6992a43e46f93422b88}} 
+\index{Matriz@{Matriz}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}}
+{\footnotesize\ttfamily int Matriz\+::get\+\_\+position (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Get the position object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+28 \{
+29   \textcolor{keywordflow}{return} matrix[row][col];
+30 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classMatriz_a1894d8447d3ae6992a43e46f93422b88_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a6b18342f8c083baece693ff41185a206}\label{classMatriz_a6b18342f8c083baece693ff41185a206}} 
+\index{Matriz@{Matriz}!get\+\_\+rows@{get\+\_\+rows}}
+\index{get\+\_\+rows@{get\+\_\+rows}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{get\+\_\+rows()}{get\_rows()}}
+{\footnotesize\ttfamily int Matriz\+::get\+\_\+rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the rows object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+13 \{
+14   \textcolor{keywordflow}{return} matrix.size();
+15 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatriz_a6b18342f8c083baece693ff41185a206_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a8df14a27d791f24206dd633b2a685c5b}\label{classMatriz_a8df14a27d791f24206dd633b2a685c5b}} 
+\index{Matriz@{Matriz}!get\+Md@{get\+Md}}
+\index{get\+Md@{get\+Md}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{get\+Md()}{getMd()}}
+{\footnotesize\ttfamily float Matriz\+::get\+Md (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Returns the mean dispersion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+85 \{
+86   \textcolor{keywordtype}{float} sumOfAfinities = 0;
+87   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < solution.size(); i++)
+88   \{
+89     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i + 1; j < solution.size(); j++)
+90     \{
+91       sumOfAfinities += matrix[solution[i]][solution[j]];
+92     \}
+93   \}
+94   \textcolor{keywordflow}{return} sumOfAfinities / solution.size();
+95 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatriz_a8df14a27d791f24206dd633b2a685c5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a61efbcc7ea661059ed0dfad32b5273cf}\label{classMatriz_a61efbcc7ea661059ed0dfad32b5273cf}} 
+\index{Matriz@{Matriz}!get\+Md\+Pair@{get\+Md\+Pair}}
+\index{get\+Md\+Pair@{get\+Md\+Pair}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{get\+Md\+Pair()}{getMdPair()}}
+{\footnotesize\ttfamily float Matriz\+::get\+Md\+Pair (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$$>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Returns the mean dispersion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+126 \{
+127   \textcolor{keywordtype}{float} sumOfAfinities = 0;
+128   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < solution.size(); i++)
+129   \{
+130       sumOfAfinities += matrix[solution[i].first][solution[i].second];
+131   \}
+132   \textcolor{keywordflow}{return} sumOfAfinities / solution.size();
+133 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classMatriz_a61efbcc7ea661059ed0dfad32b5273cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a394b84a5ec13fd2f4d202ab218680afe}\label{classMatriz_a394b84a5ec13fd2f4d202ab218680afe}} 
+\index{Matriz@{Matriz}!get\+Nodes@{get\+Nodes}}
+\index{get\+Nodes@{get\+Nodes}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{get\+Nodes()}{getNodes()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Matriz\+::get\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector with all the nodes. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+135                                 \{
+136   std::vector<int> result;
+137   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < this->\hyperlink{classMatriz_a6b18342f8c083baece693ff41185a206}{get\_rows}(); i++) \{
+138     result.push\_back(i);
+139   \}
+140   \textcolor{keywordflow}{return} result;
+141 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classMatriz_a394b84a5ec13fd2f4d202ab218680afe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatriz_a394b84a5ec13fd2f4d202ab218680afe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_ad2adc857ff1738ebfb7fe42de408737b}\label{classMatriz_ad2adc857ff1738ebfb7fe42de408737b}} 
+\index{Matriz@{Matriz}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ \& Matriz\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Operator \mbox{[}\mbox{]} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$\& 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+45 \{
+46   \textcolor{keywordflow}{if} (index >= matrix.size())
+47   \{
+48     std::cerr << \textcolor{stringliteral}{"Index fuera de rango"} << std::endl;
+49     std::exit(0);
+50   \}
+51   \textcolor{keywordflow}{else}
+52   \{
+53     \textcolor{keywordflow}{return} matrix[index];
+54   \}
+55 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classMatriz_ad2adc857ff1738ebfb7fe42de408737b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_aa929f933e9088dc0efecaa9a46d555d9}\label{classMatriz_aa929f933e9088dc0efecaa9a46d555d9}} 
+\index{Matriz@{Matriz}!resize\+Matrix@{resize\+Matrix}}
+\index{resize\+Matrix@{resize\+Matrix}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{resize\+Matrix()}{resizeMatrix()}}
+{\footnotesize\ttfamily void Matriz\+::resize\+Matrix (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Change the matrix\textquotesingle{}s dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & \\
+\hline
+{\em cols} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+4 \{
+5   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < matrix.size(); i++)
+6   \{
+7     matrix[i].resize(cols);
+8   \}
+9   matrix.resize(rows, std::vector<int>(cols));
+10 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classMatriz_aa929f933e9088dc0efecaa9a46d555d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatriz_a71fea2383ce785254c2f27da25ef70c8}\label{classMatriz_a71fea2383ce785254c2f27da25ef70c8}} 
+\index{Matriz@{Matriz}!set\+\_\+position@{set\+\_\+position}}
+\index{set\+\_\+position@{set\+\_\+position}!Matriz@{Matriz}}
+\subsubsection{\texorpdfstring{set\+\_\+position()}{set\_position()}}
+{\footnotesize\ttfamily void Matriz\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the position object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+23 \{
+24   matrix[row][col] = value;
+25 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classMatriz_a71fea2383ce785254c2f27da25ef70c8_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{matrix_8hpp}{matrix.\+hpp}\item 
+src/matrix.\+cpp\end{DoxyCompactItemize}
