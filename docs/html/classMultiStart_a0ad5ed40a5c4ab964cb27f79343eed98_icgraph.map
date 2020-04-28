@@ -1,0 +1,5 @@
+<map id="MultiStart::getWorstMd" name="MultiStart::getWorstMd">
+<area shape="rect" id="node2" href="$classMultiStart.html#ae16c330042c4b1dfb87dae8312d07a65" title="Construct a new Multi Start object. " alt="" coords="633,31,789,57"/>
+<area shape="rect" id="node3" href="$classMultiStart.html#af27ae5dbba5f924070f103b7bf5987a3" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="224,31,392,57"/>
+<area shape="rect" id="node4" href="$classMultiStart.html#a9d842b1f602c4b8a47bf6d88d483ccae" title="Method that executes the algorithm. " alt="" coords="440,81,585,108"/>
+</map>

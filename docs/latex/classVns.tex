@@ -1,0 +1,370 @@
+\hypertarget{classVns}{}\section{Vns Class Reference}
+\label{classVns}\index{Vns@{Vns}}
+
+
+\hyperlink{classVns}{Vns} implementation to solve Max Mean.  
+
+
+
+
+{\ttfamily \#include $<$vns.\+hpp$>$}
+
+
+
+Inheritance diagram for Vns\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classVns__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vns\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classVns__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVns_a82c0b5f02b3b7c35483e9e0e508e34ae}{Vns} (std\+::string filename, int iter, int noimprov, bool anx, int sz)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classVns}{Vns} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classVns_aefd9719db68183a6b2ec871c86226ee4}{construction\+Phase} (std\+::vector$<$ int $>$ first\+Candidates, int solution\+Size)
+\begin{DoxyCompactList}\small\item\em Function to create a initial solution for the problem. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classVns_a8eee9f0e31bb41bcd7bd00c46170e5b9}{construct\+Neighborhood} (int sol\+Size, std\+::vector$<$ int $>$ first\+Candidates, int add\+Size)
+\begin{DoxyCompactList}\small\item\em Creates a solutión with a specific neighborhood size. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classVns_aea2dfebed6019c61f7b7405e198d50ab}{local\+Search} (std\+::vector$<$ int $>$, std\+::vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em Function that uses a greedy algorithm to improve the solution. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, bool $>$ \hyperlink{classVns_a2349cd809a0925058a35dea1722c7c23}{get\+Worst\+Md} (std\+::vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em Return the worst node (worst afinity) in the actual solution. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classVns_aece2ea2cb74dd3608570321fcbb2de0c}{execute} ()
+\begin{DoxyCompactList}\small\item\em Method that executes the algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classVns}{Vns} implementation to solve Max Mean. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVns_a82c0b5f02b3b7c35483e9e0e508e34ae}\label{classVns_a82c0b5f02b3b7c35483e9e0e508e34ae}} 
+\index{Vns@{Vns}!Vns@{Vns}}
+\index{Vns@{Vns}!Vns@{Vns}}
+\subsubsection{\texorpdfstring{Vns()}{Vns()}}
+{\footnotesize\ttfamily Vns\+::\+Vns (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{int}]{iter,  }\item[{int}]{noimprov,  }\item[{bool}]{anx,  }\item[{int}]{sz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classVns}{Vns} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+{\em iter} & \\
+\hline
+{\em noimprov} & \\
+\hline
+{\em anx} & \\
+\hline
+{\em sz} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+40 : \hyperlink{classAlgorithm_a89df1d2c6751f70733f38daa0ee2a13b}{Algorithm}(filename), Iterations(iter), NoImprov(noimprov), anxious(anx), szTotal(sz) \{\}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_a82c0b5f02b3b7c35483e9e0e508e34ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVns_aefd9719db68183a6b2ec871c86226ee4}\label{classVns_aefd9719db68183a6b2ec871c86226ee4}} 
+\index{Vns@{Vns}!construction\+Phase@{construction\+Phase}}
+\index{construction\+Phase@{construction\+Phase}!Vns@{Vns}}
+\subsubsection{\texorpdfstring{construction\+Phase()}{constructionPhase()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Vns\+::construction\+Phase (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{first\+Candidates,  }\item[{int}]{solution\+Size }\end{DoxyParamCaption})}
+
+
+
+Function to create a initial solution for the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Candidates} & \\
+\hline
+{\em solution\+Size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+4 \{
+5   std::vector<int> solution;
+6   \textcolor{keywordflow}{while} (solution.size() < solutionSize)
+7   \{
+8     \textcolor{keywordtype}{int} randomSelection = rand() % firstCandidates.size();
+9     \textcolor{keywordflow}{if} (std::find(solution.begin(), solution.end(), firstCandidates[randomSelection]) == solution.end())
+10     \{
+11       solution.push\_back(randomSelection);
+12     \}
+13   \}
+14   \textcolor{keywordflow}{return} solution;
+15 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_aefd9719db68183a6b2ec871c86226ee4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVns_a8eee9f0e31bb41bcd7bd00c46170e5b9}\label{classVns_a8eee9f0e31bb41bcd7bd00c46170e5b9}} 
+\index{Vns@{Vns}!construct\+Neighborhood@{construct\+Neighborhood}}
+\index{construct\+Neighborhood@{construct\+Neighborhood}!Vns@{Vns}}
+\subsubsection{\texorpdfstring{construct\+Neighborhood()}{constructNeighborhood()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Vns\+::construct\+Neighborhood (\begin{DoxyParamCaption}\item[{int}]{sol\+Size,  }\item[{std\+::vector$<$ int $>$}]{first\+Candidates,  }\item[{int}]{add\+Size }\end{DoxyParamCaption})}
+
+
+
+Creates a solutión with a specific neighborhood size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Size} & \\
+\hline
+{\em first\+Candidates} & \\
+\hline
+{\em add\+Size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+18 \{
+19   \textcolor{keywordtype}{int} sz = (rand() % 2 == 1) ? solSize + addSize : solSize - addSize;
+20   sz = (sz < 1) ? solSize + addSize : sz;
+21   sz = (sz > firstCandidates.size()) ? solSize - addSize : sz;
+22   \textcolor{comment}{// si k es muy elevado para el numero de nodos puede ocurrir esto}
+23   sz = (sz < 1) ? 1 : sz;
+24   sz = (sz < 2) ? firstCandidates.size() : sz;
+25   \textcolor{keywordflow}{return} \hyperlink{classVns_aefd9719db68183a6b2ec871c86226ee4}{constructionPhase}(firstCandidates, sz);
+26 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_a8eee9f0e31bb41bcd7bd00c46170e5b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_a8eee9f0e31bb41bcd7bd00c46170e5b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVns_aece2ea2cb74dd3608570321fcbb2de0c}\label{classVns_aece2ea2cb74dd3608570321fcbb2de0c}} 
+\index{Vns@{Vns}!execute@{execute}}
+\index{execute@{execute}!Vns@{Vns}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Vns\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method that executes the algorithm. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAlgorithm_af6ea9eb9a6dbd41896e3fd7dabac096b}{Algorithm}.
+
+
+\begin{DoxyCode}
+77 \{
+78   std::vector<int> firstNodes = graph.\hyperlink{classMatriz_a394b84a5ec13fd2f4d202ab218680afe}{getNodes}();
+79   \textcolor{keywordtype}{int} solutionSize = (rand() % (graph.\hyperlink{classMatriz_a6b18342f8c083baece693ff41185a206}{get\_rows}() - 2)) + 2;
+80   std::vector<int> firstSolution = \hyperlink{classVns_aefd9719db68183a6b2ec871c86226ee4}{constructionPhase}(firstNodes, solutionSize);
+81   std::vector<int> bestSol = \hyperlink{classVns_aea2dfebed6019c61f7b7405e198d50ab}{localSearch}(firstSolution, firstNodes);
+82   \textcolor{keywordtype}{float} bestDistance = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(firstSolution);
+83   \textcolor{keywordtype}{int} iterations = 0;
+84   \textcolor{keywordtype}{int} noImprovement = 0;
+85   \textcolor{keywordtype}{int} sz = 1;
+86   \textcolor{keywordflow}{while} (iterations < this->Iterations && noImprovement < this->NoImprov)
+87   \{
+88     iterations++;
+89     sz = 1;
+90     \textcolor{keywordflow}{while} (sz < szTotal)
+91     \{
+92       std::vector<int> initialSol = \hyperlink{classVns_a8eee9f0e31bb41bcd7bd00c46170e5b9}{constructNeighborhood}(solutionSize, firstNodes, sz
+      );
+93       std::vector<int> localSearchVector = \hyperlink{classVns_aea2dfebed6019c61f7b7405e198d50ab}{localSearch}(initialSol, firstNodes);
+94       \textcolor{keywordtype}{float} testMd = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(localSearchVector);
+95       \textcolor{keywordflow}{if} (testMd > bestDistance)
+96       \{
+97         bestSol = localSearchVector;
+98         bestDistance = testMd;
+99         sz = 1;
+100         noImprovement = 0;
+101       \}
+102       \textcolor{keywordflow}{else}
+103       \{
+104         noImprovement++;
+105         sz++;
+106       \}
+107     \}
+108   \}
+109 
+110   \textcolor{keywordflow}{return} bestSol;
+111 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_aece2ea2cb74dd3608570321fcbb2de0c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{classVns_aece2ea2cb74dd3608570321fcbb2de0c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVns_a2349cd809a0925058a35dea1722c7c23}\label{classVns_a2349cd809a0925058a35dea1722c7c23}} 
+\index{Vns@{Vns}!get\+Worst\+Md@{get\+Worst\+Md}}
+\index{get\+Worst\+Md@{get\+Worst\+Md}!Vns@{Vns}}
+\subsubsection{\texorpdfstring{get\+Worst\+Md()}{getWorstMd()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, bool $>$ Vns\+::get\+Worst\+Md (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Return the worst node (worst afinity) in the actual solution. 
+
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$int,bool$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+45 \{
+46   std::vector<std::pair<int, bool>> vertexVector;
+47   std::pair<int, bool> vertex(-1, \textcolor{keyword}{false});
+48   vertexVector.push\_back(vertex);
+49   \textcolor{keywordtype}{float} currentDistance = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+50   \textcolor{keywordtype}{float} currentEdgeSum = currentDistance * solution.size();
+51   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < solution.size(); i++)
+52   \{
+53     \textcolor{keywordtype}{int} vertex = solution[i];
+54     solution.erase(solution.begin() + i);
+55     \textcolor{keywordtype}{float} nextMd = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+56     solution.insert(solution.begin() + i, vertex);
+57     \textcolor{keywordflow}{if} (nextMd > currentDistance)
+58     \{
+59       \textcolor{keywordflow}{if} (anxious)
+60       \{
+61         \textcolor{keywordflow}{return} std::pair<int, bool>(i, \textcolor{keyword}{true});
+62         ;
+63       \}
+64       currentDistance = nextMd;
+65       vertexVector.clear();
+66       vertexVector.push\_back(std::pair<int, bool>(i, \textcolor{keyword}{true}));
+67     \}
+68     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nextMd == currentDistance)
+69     \{
+70       vertexVector.push\_back(std::pair<int, bool>(i, \textcolor{keyword}{true}));
+71     \}
+72   \}
+73   \textcolor{keywordflow}{return} vertexVector[rand() % vertexVector.size()];
+74 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classVns_a2349cd809a0925058a35dea1722c7c23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_a2349cd809a0925058a35dea1722c7c23_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classVns_aea2dfebed6019c61f7b7405e198d50ab}\label{classVns_aea2dfebed6019c61f7b7405e198d50ab}} 
+\index{Vns@{Vns}!local\+Search@{local\+Search}}
+\index{local\+Search@{local\+Search}!Vns@{Vns}}
+\subsubsection{\texorpdfstring{local\+Search()}{localSearch()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Vns\+::local\+Search (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution,  }\item[{std\+::vector$<$ int $>$}]{first\+Candidates }\end{DoxyParamCaption})}
+
+
+
+Function that uses a greedy algorithm to improve the solution. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+29 \{
+30   \textcolor{keywordtype}{bool} improvement = \textcolor{keyword}{true};
+31   \textcolor{keywordflow}{while} (improvement)
+32   \{
+33     improvement = \textcolor{keyword}{false};
+34     std::pair<int, bool> worst = \hyperlink{classVns_a2349cd809a0925058a35dea1722c7c23}{getWorstMd}(solution);
+35     \textcolor{keywordflow}{if} (worst.second)
+36     \{
+37       improvement = \textcolor{keyword}{true};
+38       solution.erase(solution.begin() + worst.first);
+39     \}
+40   \}
+41   \textcolor{keywordflow}{return} solution;
+42 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_aea2dfebed6019c61f7b7405e198d50ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVns_aea2dfebed6019c61f7b7405e198d50ab_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{vns_8hpp}{vns.\+hpp}\item 
+src/vns.\+cpp\end{DoxyCompactItemize}

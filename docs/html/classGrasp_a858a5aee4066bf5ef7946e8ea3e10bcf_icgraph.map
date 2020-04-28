@@ -1,0 +1,5 @@
+<map id="Grasp::getWorstMd" name="Grasp::getWorstMd">
+<area shape="rect" id="node2" href="$classGrasp.html#acf9e8029b833f71283be24a9309c5cad" title="Construct a new Grasp object. " alt="" coords="557,31,664,57"/>
+<area shape="rect" id="node3" href="$classGrasp.html#a7c5bebb4a0dea342928f66fb73a56559" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="199,31,341,57"/>
+<area shape="rect" id="node4" href="$classGrasp.html#a335b063bccd26b434dda3a3a69d6d711" title="Method that executes the algorithm. " alt="" coords="389,81,509,108"/>
+</map>

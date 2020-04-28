@@ -1,0 +1,362 @@
+\hypertarget{classGrasp}{}\section{Grasp Class Reference}
+\label{classGrasp}\index{Grasp@{Grasp}}
+
+
+\hyperlink{classGrasp}{Grasp} implementation to solve Max Mean.  
+
+
+
+
+{\ttfamily \#include $<$grasp.\+hpp$>$}
+
+
+
+Inheritance diagram for Grasp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classGrasp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Grasp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classGrasp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGrasp_acf9e8029b833f71283be24a9309c5cad}{Grasp} (std\+::string filename, int iter, int noimprov, bool anx)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classGrasp}{Grasp} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classGrasp_aef091e71dd747ebcb78e1ebcdcf44221}{construction\+Phase} (std\+::vector$<$ int $>$ first\+Candidates)
+\begin{DoxyCompactList}\small\item\em Function to create a initial solution for the problem. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classGrasp_ac63d4a1892472663549c77686edfed74}{R\+CL} (std\+::vector$<$ int $>$, std\+::vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em Function to create a R\+CL array based on an initial solution. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classGrasp_a7c5bebb4a0dea342928f66fb73a56559}{local\+Search} (std\+::vector$<$ int $>$, std\+::vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em Function that uses a greedy algorithm to improve the solution. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, bool $>$ \hyperlink{classGrasp_a858a5aee4066bf5ef7946e8ea3e10bcf}{get\+Worst\+Md} (std\+::vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em Return the worst node (worst afinity) in the actual solution. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classGrasp_a335b063bccd26b434dda3a3a69d6d711}{execute} ()
+\begin{DoxyCompactList}\small\item\em Method that executes the algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGrasp}{Grasp} implementation to solve Max Mean. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGrasp_acf9e8029b833f71283be24a9309c5cad}\label{classGrasp_acf9e8029b833f71283be24a9309c5cad}} 
+\index{Grasp@{Grasp}!Grasp@{Grasp}}
+\index{Grasp@{Grasp}!Grasp@{Grasp}}
+\subsubsection{\texorpdfstring{Grasp()}{Grasp()}}
+{\footnotesize\ttfamily Grasp\+::\+Grasp (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{int}]{iter,  }\item[{int}]{noimprov,  }\item[{bool}]{anx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classGrasp}{Grasp} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+{\em iter} & \\
+\hline
+{\em noimprov} & \\
+\hline
+{\em anx} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+37 : \hyperlink{classAlgorithm_a89df1d2c6751f70733f38daa0ee2a13b}{Algorithm}(filename), Iterations(iter), NoImprov(noimprov), anxious(anx) \{\}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_acf9e8029b833f71283be24a9309c5cad_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrasp_aef091e71dd747ebcb78e1ebcdcf44221}\label{classGrasp_aef091e71dd747ebcb78e1ebcdcf44221}} 
+\index{Grasp@{Grasp}!construction\+Phase@{construction\+Phase}}
+\index{construction\+Phase@{construction\+Phase}!Grasp@{Grasp}}
+\subsubsection{\texorpdfstring{construction\+Phase()}{constructionPhase()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Grasp\+::construction\+Phase (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{first\+Candidates }\end{DoxyParamCaption})}
+
+
+
+Function to create a initial solution for the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Candidates} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+3                                                                        \{
+4    std::vector<int> solution;
+5    \textcolor{keywordtype}{int} firstNode = rand() % firstCandidates.size();
+6    solution.push\_back(firstCandidates[firstNode]);
+7    \textcolor{keywordtype}{int} solutionSize = (rand() % (graph.\hyperlink{classMatriz_a6b18342f8c083baece693ff41185a206}{get\_rows}() - 2)) + 2;
+8    \textcolor{keywordflow}{while}(solution.size() < solutionSize) \{
+9      std::vector<int> rclVector = \hyperlink{classGrasp_ac63d4a1892472663549c77686edfed74}{RCL}(solution, firstCandidates);
+10      solution.push\_back(rclVector[rand() % rclVector.size()]);
+11    \}
+12    \textcolor{keywordflow}{return} solution;
+13  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_aef091e71dd747ebcb78e1ebcdcf44221_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_aef091e71dd747ebcb78e1ebcdcf44221_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGrasp_a335b063bccd26b434dda3a3a69d6d711}\label{classGrasp_a335b063bccd26b434dda3a3a69d6d711}} 
+\index{Grasp@{Grasp}!execute@{execute}}
+\index{execute@{execute}!Grasp@{Grasp}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Grasp\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method that executes the algorithm. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAlgorithm_af6ea9eb9a6dbd41896e3fd7dabac096b}{Algorithm}.
+
+
+\begin{DoxyCode}
+82                               \{
+83   std::vector<int> firstNodes = graph.\hyperlink{classMatriz_a394b84a5ec13fd2f4d202ab218680afe}{getNodes}();
+84   std::vector<int> bestSolution;
+85   bestSolution.push\_back(0);
+86   \textcolor{keywordtype}{float} bestDistance = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(bestSolution);
+87   \textcolor{keywordtype}{int} iterations = 0;
+88   \textcolor{keywordtype}{int} noImprovement = 0;
+89   \textcolor{keywordflow}{while}(iterations < this->Iterations && noImprovement < this->NoImprov) \{
+90     iterations++;
+91     std::vector<int> initialSol = \hyperlink{classGrasp_aef091e71dd747ebcb78e1ebcdcf44221}{constructionPhase}(firstNodes);
+92     std::vector<int> localSearchVector = \hyperlink{classGrasp_a7c5bebb4a0dea342928f66fb73a56559}{localSearch}(initialSol, firstNodes);
+93     \textcolor{keywordtype}{float} testMd = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(localSearchVector);
+94     \textcolor{keywordflow}{if}(testMd > bestDistance) \{
+95       bestSolution = localSearchVector;
+96       bestDistance = testMd;
+97       noImprovement = 0;
+98     \} \textcolor{keywordflow}{else} \{
+99       noImprovement++;
+100     \}
+101   \}
+102   
+103 \textcolor{keywordflow}{return} bestSolution;
+104 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_a335b063bccd26b434dda3a3a69d6d711_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classGrasp_a335b063bccd26b434dda3a3a69d6d711_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGrasp_a858a5aee4066bf5ef7946e8ea3e10bcf}\label{classGrasp_a858a5aee4066bf5ef7946e8ea3e10bcf}} 
+\index{Grasp@{Grasp}!get\+Worst\+Md@{get\+Worst\+Md}}
+\index{get\+Worst\+Md@{get\+Worst\+Md}!Grasp@{Grasp}}
+\subsubsection{\texorpdfstring{get\+Worst\+Md()}{getWorstMd()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, bool $>$ Grasp\+::get\+Worst\+Md (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Return the worst node (worst afinity) in the actual solution. 
+
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$int,bool$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+53                                                            \{
+54   std::vector<std::pair<int, bool>> vertexVector;
+55   std::pair<int, bool> vertex(-1, \textcolor{keyword}{false});
+56   vertexVector.push\_back(vertex);
+57   \textcolor{keywordtype}{float} currentDistance = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+58   \textcolor{keywordtype}{float} currentEdgeSum = currentDistance * solution.size();
+59   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < solution.size(); i++)
+60   \{
+61     \textcolor{keywordtype}{int} vertex = solution[i];
+62     solution.erase(solution.begin() + i);
+63     \textcolor{keywordtype}{float} nextMd = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+64     solution.insert(solution.begin() + i, vertex);
+65     \textcolor{keywordflow}{if} (nextMd > currentDistance)
+66     \{
+67       \textcolor{keywordflow}{if}(anxious) \{
+68         \textcolor{keywordflow}{return} std::pair<int,bool>(i,\textcolor{keyword}{true});;
+69       \}
+70       currentDistance = nextMd;
+71       vertexVector.clear();
+72       vertexVector.push\_back(std::pair<int, bool>(i, \textcolor{keyword}{true}));
+73     \}
+74     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nextMd == currentDistance)
+75     \{
+76       vertexVector.push\_back(std::pair<int, bool>(i, \textcolor{keyword}{true}));
+77     \}
+78   \}
+79   \textcolor{keywordflow}{return} vertexVector[rand() % vertexVector.size()];
+80 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classGrasp_a858a5aee4066bf5ef7946e8ea3e10bcf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_a858a5aee4066bf5ef7946e8ea3e10bcf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGrasp_a7c5bebb4a0dea342928f66fb73a56559}\label{classGrasp_a7c5bebb4a0dea342928f66fb73a56559}} 
+\index{Grasp@{Grasp}!local\+Search@{local\+Search}}
+\index{local\+Search@{local\+Search}!Grasp@{Grasp}}
+\subsubsection{\texorpdfstring{local\+Search()}{localSearch()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Grasp\+::local\+Search (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution,  }\item[{std\+::vector$<$ int $>$}]{first\+Candidates }\end{DoxyParamCaption})}
+
+
+
+Function that uses a greedy algorithm to improve the solution. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+40                                                                                          \{
+41   \textcolor{keywordtype}{bool} improvement = \textcolor{keyword}{true};
+42   \textcolor{keywordflow}{while}(improvement) \{
+43     improvement = \textcolor{keyword}{false};
+44     std::pair<int,bool> worst = \hyperlink{classGrasp_a858a5aee4066bf5ef7946e8ea3e10bcf}{getWorstMd}(solution);
+45     \textcolor{keywordflow}{if}(worst.second)\{
+46       improvement = \textcolor{keyword}{true};
+47       solution.erase(solution.begin() + worst.first);
+48     \}
+49   \}
+50   \textcolor{keywordflow}{return} solution;
+51 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_a7c5bebb4a0dea342928f66fb73a56559_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_a7c5bebb4a0dea342928f66fb73a56559_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGrasp_ac63d4a1892472663549c77686edfed74}\label{classGrasp_ac63d4a1892472663549c77686edfed74}} 
+\index{Grasp@{Grasp}!R\+CL@{R\+CL}}
+\index{R\+CL@{R\+CL}!Grasp@{Grasp}}
+\subsubsection{\texorpdfstring{R\+C\+L()}{RCL()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Grasp\+::\+R\+CL (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{solution,  }\item[{std\+::vector$<$ int $>$}]{first\+Candidates }\end{DoxyParamCaption})}
+
+
+
+Function to create a R\+CL array based on an initial solution. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+15                                                                                   \{
+16    std::vector<int> sortedNodes;
+17    std::vector<float> sortedDistances;
+18    std::vector<int> rclVector;
+19    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < firstCandidates.size(); i++) \{
+20      \textcolor{keywordflow}{if}(std::find(solution.begin(), solution.end(), firstCandidates[i]) == solution.end()) \{
+21        solution.push\_back(firstCandidates[i]);
+22        \textcolor{keywordtype}{float} testMd = graph.\hyperlink{classMatriz_a8df14a27d791f24206dd633b2a685c5b}{getMd}(solution);
+23        solution.pop\_back();
+24        \textcolor{keywordtype}{int} position = 0;
+25        \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < sortedDistances.size(); j++) \{
+26          \textcolor{keywordflow}{if}(testMd < sortedDistances[j]) \{
+27            position++;
+28          \}
+29        \}
+30        sortedDistances.insert(sortedDistances.begin() + position, testMd);
+31        sortedNodes.insert(sortedNodes.begin() + position, firstCandidates[i]);
+32      \}
+33    \}
+34    \textcolor{keywordtype}{int} percent = (sortedNodes.size() / (1 / 0.2));
+35    percent = percent == 0 ? 1 : percent;
+36    std::copy(sortedNodes.begin(), sortedNodes.begin() + percent, std::back\_inserter(rclVector));
+37    \textcolor{keywordflow}{return} rclVector;
+38  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classGrasp_ac63d4a1892472663549c77686edfed74_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGrasp_ac63d4a1892472663549c77686edfed74_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{grasp_8hpp}{grasp.\+hpp}\item 
+src/grasp.\+cpp\end{DoxyCompactItemize}
