@@ -3,11 +3,11 @@
 std::vector<int> secondGreedyAlgorithm::execute()
 {
   std::vector<int> solution = graph.getNodes();
-  std::pair<int, bool> k = maximizeMd(solution);
+  std::pair<int, bool> k = worstMd(solution);
   while (k.second)
   {
     solution.erase(solution.begin() + k.first);
-    k = maximizeMd(solution);
+    k = worstMd(solution);
   }
   return solution;
 }
