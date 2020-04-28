@@ -40,5 +40,5 @@ public:
    * @param solution 
    * @return std::pair<int, bool> 
    */
-  std::pair<int, bool> maximizeMd(std::vector<int> solution);
+  std::pair<int, bool> worstMd(std::vector<int> solution);
 };

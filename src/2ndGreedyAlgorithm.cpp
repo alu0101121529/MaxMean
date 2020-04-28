@@ -12,7 +12,7 @@ std::vector<int> secondGreedyAlgorithm::execute()
   return solution;
 }
 
-std::pair<int, bool> secondGreedyAlgorithm::maximizeMd(std::vector<int> solution)
+std::pair<int, bool> secondGreedyAlgorithm::worstMd(std::vector<int> solution)
 {
   std::vector<std::pair<int, bool>> vertexVector;
   std::pair<int, bool> vertex(-1, false);
