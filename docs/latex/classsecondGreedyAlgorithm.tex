@@ -11,8 +11,7 @@ Another implementation of the greedy algorithm to solve Max Mean problem.
 
 
 
-Inheritance diagram for second\+Greedy\+Algorithm\+:
-\nopagebreak
+Inheritance diagram for second\+Greedy\+Algorithm\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for second\+Greedy\+Algorithm\+:
 \end{figure}
 
 
-Collaboration diagram for second\+Greedy\+Algorithm\+:
-\nopagebreak
+Collaboration diagram for second\+Greedy\+Algorithm\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -96,11 +94,11 @@ Implements \hyperlink{classAlgorithm_af6ea9eb9a6dbd41896e3fd7dabac096b}{Algorith
 \begin{DoxyCode}
 4 \{
 5   std::vector<int> solution = graph.\hyperlink{classMatriz_a394b84a5ec13fd2f4d202ab218680afe}{getNodes}();
-6   std::pair<int, bool> k = maximizeMd(solution);
+6   std::pair<int, bool> k = \hyperlink{classsecondGreedyAlgorithm_a714fa858b1666fc77153890ac16f1b3f}{worstMd}(solution);
 7   \textcolor{keywordflow}{while} (k.second)
 8   \{
 9     solution.erase(solution.begin() + k.first);
-10     k = maximizeMd(solution);
+10     k = \hyperlink{classsecondGreedyAlgorithm_a714fa858b1666fc77153890ac16f1b3f}{worstMd}(solution);
 11   \}
 12   \textcolor{keywordflow}{return} solution;
 13 \}

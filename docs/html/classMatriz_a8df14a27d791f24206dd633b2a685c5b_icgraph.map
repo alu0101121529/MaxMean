@@ -1,23 +1,24 @@
 <map id="Matriz::getMd" name="Matriz::getMd">
-<area shape="rect" id="node2" href="$classMatriz.html#a388709cfee356a0c78b66e3f538e9318" title="Construct a new Matriz object. " alt="" coords="220,5,331,32"/>
-<area shape="rect" id="node3" href="$classsecondGreedyAlgorithm.html#a714fa858b1666fc77153890ac16f1b3f" title="Returns the node with the max mean dispersion. " alt="" coords="186,57,365,98"/>
-<area shape="rect" id="node5" href="$classGrasp.html#ac63d4a1892472663549c77686edfed74" title="Function to create a RCL array based on an initial solution. " alt="" coords="229,275,321,301"/>
-<area shape="rect" id="node8" href="$classGrasp.html#a335b063bccd26b434dda3a3a69d6d711" title="Method that executes the algorithm. " alt="" coords="737,173,857,200"/>
-<area shape="rect" id="node9" href="$classGrasp.html#a858a5aee4066bf5ef7946e8ea3e10bcf" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="203,123,348,149"/>
-<area shape="rect" id="node11" href="$classgreedyAlgorithm.html#a4968e1371d2fdfb1b1b6f24b57dd1f07" title="Returns the node with the max mean dispersion. " alt="" coords="164,351,387,377"/>
-<area shape="rect" id="node14" href="$classMultiStart.html#a456dc441b6e7028aa86a0488830f9bc1" title="Function to create a RCL array based on an initial solution. " alt="" coords="739,427,856,453"/>
-<area shape="rect" id="node16" href="$classMultiStart.html#a0ad5ed40a5c4ab964cb27f79343eed98" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="190,528,361,555"/>
-<area shape="rect" id="node18" href="$classMultiStart.html#a9d842b1f602c4b8a47bf6d88d483ccae" title="Method that executes the algorithm. " alt="" coords="725,477,870,504"/>
-<area shape="rect" id="node19" href="$classVns.html#a2349cd809a0925058a35dea1722c7c23" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="210,680,341,707"/>
-<area shape="rect" id="node22" href="$classVns.html#aece2ea2cb74dd3608570321fcbb2de0c" title="Method that executes the algorithm. " alt="" coords="744,629,851,656"/>
-<area shape="rect" id="node4" href="$classsecondGreedyAlgorithm.html#a0514ddce71b6343aaf54833c687a0fdf" title="Construct a new secondGreedyAlgorithm object. " alt="" coords="437,6,623,47"/>
-<area shape="rect" id="node6" href="$classGrasp.html#acf9e8029b833f71283be24a9309c5cad" title="Construct a new Grasp object. " alt="" coords="994,173,1101,200"/>
-<area shape="rect" id="node7" href="$classGrasp.html#aef091e71dd747ebcb78e1ebcdcf44221" title="Function to create a initial solution for the problem. " alt="" coords="437,224,623,251"/>
-<area shape="rect" id="node10" href="$classGrasp.html#a7c5bebb4a0dea342928f66fb73a56559" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="459,123,601,149"/>
-<area shape="rect" id="node12" href="$classgreedyAlgorithm.html#acd4c3a073c8ed2e93bbf402363ebd71d" title="Construct a new greedy Algorithm object. " alt="" coords="673,351,921,377"/>
-<area shape="rect" id="node13" href="$classgreedyAlgorithm.html#a37c81600b24a32ae25b6f0eeab643a7a" title="Method that executes the algorithm. " alt="" coords="435,376,625,403"/>
-<area shape="rect" id="node15" href="$classMultiStart.html#ae16c330042c4b1dfb87dae8312d07a65" title="Construct a new Multi Start object. " alt="" coords="969,503,1125,529"/>
-<area shape="rect" id="node17" href="$classMultiStart.html#af27ae5dbba5f924070f103b7bf5987a3" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="446,528,614,555"/>
-<area shape="rect" id="node20" href="$classVns.html#a82c0b5f02b3b7c35483e9e0e508e34ae" title="Construct a new Vns object. " alt="" coords="1008,680,1087,707"/>
-<area shape="rect" id="node21" href="$classVns.html#aea2dfebed6019c61f7b7405e198d50ab" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="465,680,595,707"/>
+<area shape="rect" id="node2" href="$classMatriz.html#a388709cfee356a0c78b66e3f538e9318" title="Construct a new Matriz object. " alt="" coords="220,9,331,35"/>
+<area shape="rect" id="node3" href="$classsecondGreedyAlgorithm.html#a714fa858b1666fc77153890ac16f1b3f" title="Returns the node with the max mean dispersion. " alt="" coords="186,60,365,101"/>
+<area shape="rect" id="node6" href="$classGrasp.html#ac63d4a1892472663549c77686edfed74" title="Function to create a RCL array based on an initial solution. " alt="" coords="229,151,321,178"/>
+<area shape="rect" id="node9" href="$classGrasp.html#a335b063bccd26b434dda3a3a69d6d711" title="Method that executes the algorithm. " alt="" coords="737,202,857,229"/>
+<area shape="rect" id="node10" href="$classGrasp.html#a858a5aee4066bf5ef7946e8ea3e10bcf" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="203,303,348,330"/>
+<area shape="rect" id="node12" href="$classgreedyAlgorithm.html#a4968e1371d2fdfb1b1b6f24b57dd1f07" title="Returns the node with the max mean dispersion. " alt="" coords="164,379,387,406"/>
+<area shape="rect" id="node15" href="$classMultiStart.html#a456dc441b6e7028aa86a0488830f9bc1" title="Function to create a RCL array based on an initial solution. " alt="" coords="739,607,856,634"/>
+<area shape="rect" id="node17" href="$classMultiStart.html#a0ad5ed40a5c4ab964cb27f79343eed98" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="190,506,361,533"/>
+<area shape="rect" id="node19" href="$classMultiStart.html#a9d842b1f602c4b8a47bf6d88d483ccae" title="Method that executes the algorithm. " alt="" coords="725,455,870,482"/>
+<area shape="rect" id="node20" href="$classVns.html#a2349cd809a0925058a35dea1722c7c23" title="Return the worst node (worst afinity) in the actual solution. " alt="" coords="210,709,341,735"/>
+<area shape="rect" id="node23" href="$classVns.html#aece2ea2cb74dd3608570321fcbb2de0c" title="Method that executes the algorithm. " alt="" coords="744,658,851,685"/>
+<area shape="rect" id="node4" href="$classsecondGreedyAlgorithm.html#a0514ddce71b6343aaf54833c687a0fdf" title="Construct a new secondGreedyAlgorithm object. " alt="" coords="704,5,891,47"/>
+<area shape="rect" id="node5" href="$classsecondGreedyAlgorithm.html#a119a730116003d00438179ccf4e2cafd" title="Method that executes the algorithm. " alt="" coords="441,35,619,76"/>
+<area shape="rect" id="node7" href="$classGrasp.html#acf9e8029b833f71283be24a9309c5cad" title="Construct a new Grasp object. " alt="" coords="994,202,1101,229"/>
+<area shape="rect" id="node8" href="$classGrasp.html#aef091e71dd747ebcb78e1ebcdcf44221" title="Function to create a initial solution for the problem. " alt="" coords="437,151,623,178"/>
+<area shape="rect" id="node11" href="$classGrasp.html#a7c5bebb4a0dea342928f66fb73a56559" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="459,253,601,279"/>
+<area shape="rect" id="node13" href="$classgreedyAlgorithm.html#acd4c3a073c8ed2e93bbf402363ebd71d" title="Construct a new greedy Algorithm object. " alt="" coords="673,379,921,406"/>
+<area shape="rect" id="node14" href="$classgreedyAlgorithm.html#a37c81600b24a32ae25b6f0eeab643a7a" title="Method that executes the algorithm. " alt="" coords="435,405,625,431"/>
+<area shape="rect" id="node16" href="$classMultiStart.html#ae16c330042c4b1dfb87dae8312d07a65" title="Construct a new Multi Start object. " alt="" coords="969,531,1125,558"/>
+<area shape="rect" id="node18" href="$classMultiStart.html#af27ae5dbba5f924070f103b7bf5987a3" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="446,506,614,533"/>
+<area shape="rect" id="node21" href="$classVns.html#a82c0b5f02b3b7c35483e9e0e508e34ae" title="Construct a new Vns object. " alt="" coords="1008,709,1087,735"/>
+<area shape="rect" id="node22" href="$classVns.html#aea2dfebed6019c61f7b7405e198d50ab" title="Function that uses a greedy algorithm to improve the solution. " alt="" coords="465,709,595,735"/>
 </map>
